@@ -1,0 +1,1 @@
+/home/claudio/workspaces/src/kilobot/launch/rsp.launch.py

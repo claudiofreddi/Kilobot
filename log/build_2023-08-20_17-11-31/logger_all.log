@@ -1,0 +1,104 @@
+[0.947s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.947s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fcf99cae110>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fcf99cadba0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fcf99cadba0>>)
+[0.998s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.998s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.998s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.998s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.998s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.998s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.998s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/claudio/workspaces/src/kilobot'
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.000s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.000s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.026s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'kilobot'
+[1.026s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.026s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.026s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.026s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.026s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.082s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/claudio/workspaces/src/install
+[1.085s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 271 installed packages in /opt/ros/humble
+[1.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.217s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'cmake_args' from command line to 'None'
+[1.217s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'cmake_target' from command line to 'None'
+[1.217s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.217s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'cmake_clean_cache' from command line to 'False'
+[1.218s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'cmake_clean_first' from command line to 'False'
+[1.218s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'cmake_force_configure' from command line to 'False'
+[1.218s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'ament_cmake_args' from command line to 'None'
+[1.218s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'catkin_cmake_args' from command line to 'None'
+[1.218s] Level 5:colcon.colcon_core.verb:set package 'kilobot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.218s] DEBUG:colcon.colcon_core.verb:Building package 'kilobot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/claudio/workspaces/src/kilobot/build/kilobot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/claudio/workspaces/src/kilobot/install/kilobot', 'merge_install': False, 'path': '/home/claudio/workspaces/src/kilobot', 'symlink_install': False, 'test_result_base': None}
+[1.219s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.226s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.227s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/claudio/workspaces/src/kilobot' with build type 'ament_cmake'
+[1.227s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/claudio/workspaces/src/kilobot'
+[1.235s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.236s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.236s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.256s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/claudio/workspaces/src/kilobot/build/kilobot': CMAKE_PREFIX_PATH=/home/claudio/workspaces/src/install/py_vision_rpi_bot:/opt/ros/humble /usr/bin/cmake /home/claudio/workspaces/src/kilobot -DCMAKE_INSTALL_PREFIX=/home/claudio/workspaces/src/kilobot/install/kilobot
+[2.643s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/claudio/workspaces/src/kilobot/build/kilobot' returned '0': CMAKE_PREFIX_PATH=/home/claudio/workspaces/src/install/py_vision_rpi_bot:/opt/ros/humble /usr/bin/cmake /home/claudio/workspaces/src/kilobot -DCMAKE_INSTALL_PREFIX=/home/claudio/workspaces/src/kilobot/install/kilobot
+[2.649s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/claudio/workspaces/src/kilobot/build/kilobot': CMAKE_PREFIX_PATH=/home/claudio/workspaces/src/install/py_vision_rpi_bot:/opt/ros/humble /usr/bin/cmake --build /home/claudio/workspaces/src/kilobot/build/kilobot -- -j4 -l4
+[2.782s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/claudio/workspaces/src/kilobot/build/kilobot' returned '0': CMAKE_PREFIX_PATH=/home/claudio/workspaces/src/install/py_vision_rpi_bot:/opt/ros/humble /usr/bin/cmake --build /home/claudio/workspaces/src/kilobot/build/kilobot -- -j4 -l4
+[2.930s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/claudio/workspaces/src/kilobot/build/kilobot': CMAKE_PREFIX_PATH=/home/claudio/workspaces/src/install/py_vision_rpi_bot:/opt/ros/humble /usr/bin/cmake --install /home/claudio/workspaces/src/kilobot/build/kilobot
+[3.014s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kilobot)
+[3.019s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/claudio/workspaces/src/kilobot/build/kilobot' returned '0': CMAKE_PREFIX_PATH=/home/claudio/workspaces/src/install/py_vision_rpi_bot:/opt/ros/humble /usr/bin/cmake --install /home/claudio/workspaces/src/kilobot/build/kilobot
+[3.028s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot' for CMake module files
+[3.030s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot' for CMake config files
+[3.031s] Level 1:colcon.colcon_core.shell:create_environment_hook('kilobot', 'cmake_prefix_path')
+[3.035s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/hook/cmake_prefix_path.ps1'
+[3.037s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/hook/cmake_prefix_path.dsv'
+[3.038s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/hook/cmake_prefix_path.sh'
+[3.041s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/bin'
+[3.041s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/lib/pkgconfig/kilobot.pc'
+[3.042s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/lib/python3.10/site-packages'
+[3.042s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/bin'
+[3.047s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.ps1'
+[3.049s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.dsv'
+[3.050s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.sh'
+[3.052s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.bash'
+[3.061s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.zsh'
+[3.063s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/claudio/workspaces/src/kilobot/install/kilobot/share/colcon-core/packages/kilobot)
+[3.154s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kilobot)
+[3.170s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot' for CMake module files
+[3.173s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot' for CMake config files
+[3.175s] Level 1:colcon.colcon_core.shell:create_environment_hook('kilobot', 'cmake_prefix_path')
+[3.183s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/hook/cmake_prefix_path.ps1'
+[3.186s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/hook/cmake_prefix_path.dsv'
+[3.188s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/hook/cmake_prefix_path.sh'
+[3.202s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/bin'
+[3.202s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/lib/pkgconfig/kilobot.pc'
+[3.204s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/lib/python3.10/site-packages'
+[3.205s] Level 1:colcon.colcon_core.environment:checking '/home/claudio/workspaces/src/kilobot/install/kilobot/bin'
+[3.215s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.ps1'
+[3.243s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.dsv'
+[3.248s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.sh'
+[3.251s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.bash'
+[3.254s] INFO:colcon.colcon_core.shell:Creating package script '/home/claudio/workspaces/src/kilobot/install/kilobot/share/kilobot/package.zsh'
+[3.258s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/claudio/workspaces/src/kilobot/install/kilobot/share/colcon-core/packages/kilobot)
+[3.261s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.262s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.263s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.263s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.311s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.312s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.312s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.370s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.374s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/claudio/workspaces/src/kilobot/install/local_setup.ps1'
+[3.376s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/claudio/workspaces/src/kilobot/install/_local_setup_util_ps1.py'
+[3.379s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/claudio/workspaces/src/kilobot/install/setup.ps1'
+[3.382s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/claudio/workspaces/src/kilobot/install/local_setup.sh'
+[3.383s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/claudio/workspaces/src/kilobot/install/_local_setup_util_sh.py'
+[3.385s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/claudio/workspaces/src/kilobot/install/setup.sh'
+[3.389s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/claudio/workspaces/src/kilobot/install/local_setup.bash'
+[3.390s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/claudio/workspaces/src/kilobot/install/setup.bash'
+[3.399s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/claudio/workspaces/src/kilobot/install/local_setup.zsh'
+[3.401s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/claudio/workspaces/src/kilobot/install/setup.zsh'
