@@ -9,6 +9,8 @@ from launch_ros.actions import Node
 
 import xacro
 
+# ros2 launch kilobot rsp.launch.py
+
 
 def generate_launch_description():
 
@@ -31,6 +33,21 @@ def generate_launch_description():
         parameters=[params]
     )
 
+    node_joint_state_publisher = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        output='screen'
+        
+    )
+
+
+    node_rviz2 = Node(
+        package='rviz2',
+        executable='rviz2',
+        output='screen'
+    )
+
+
 
     # Launch!
     return LaunchDescription([
@@ -43,5 +60,9 @@ def generate_launch_description():
             default_value='true',
             description='Use ros2_control if true'),
 
-        node_robot_state_publisher
+        
+        node_joint_state_publisher,
+        node_robot_state_publisher,
+        node_rviz2
+        
     ])
