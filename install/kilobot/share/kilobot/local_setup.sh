@@ -1,1 +1,1 @@
-/home/claudio/workspaces/src/kilobot/build/kilobot/ament_cmake_environment_hooks/local_setup.sh
+/home/claudio/dev_ws/src/kilobot/build/kilobot/ament_cmake_environment_hooks/local_setup.sh

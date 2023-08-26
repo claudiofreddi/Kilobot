@@ -1,1 +1,1 @@
-/home/claudio/workspaces/src/kilobot/launch/launch_sim.launch.py
+/home/claudio/dev_ws/src/kilobot/launch/launch_sim.launch.py
