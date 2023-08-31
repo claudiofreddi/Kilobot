@@ -6,6 +6,9 @@
 # Author      : Claudio Freddi
 # Date        : 2023-08-28
 
+#run 
+#
+
 import RPi.GPIO as GPIO
 import time
 
@@ -18,7 +21,7 @@ Motor_Right_Pin1  = 14
 Motor_Right_Pin2  = 15 
 
 Dir_forward   = 0
-Dir_Rightackward  = 1
+Dir_backward  = 1
 
 pwm_Left = 0
 pwm_Right = 0
@@ -57,7 +60,7 @@ def motor_right(status, direction, speed):#Motor 2 positive and negative rotatio
             GPIO.output(Motor_Right_Pin2, GPIO.LOW)
             pwm_Right.start(100)
             pwm_Right.ChangeDutyCycle(speed)
-        elif direction == Dir_Rightackward:
+        elif direction == Dir_backward:
             GPIO.output(Motor_Right_Pin1, GPIO.LOW)
             GPIO.output(Motor_Right_Pin2, GPIO.HIGH)
             pwm_Right.start(0)
@@ -73,7 +76,7 @@ def motor_left(status, direction, speed):
             GPIO.output(Motor_Left_Pin2, GPIO.LOW)
             pwm_Left.start(100)
             pwm_Left.ChangeDutyCycle(speed)
-        elif direction == Dir_Rightackward:
+        elif direction == Dir_backward:
             GPIO.output(Motor_Left_Pin1, GPIO.LOW)
             GPIO.output(Motor_Left_Pin2, GPIO.HIGH)
             pwm_Left.start(0)
@@ -91,11 +94,33 @@ try:
 except KeyboardInterrupt:
     destroy()
 
+def GoFw(speed, duration):
+   motor_left(1, Dir_forward,speed)
+   motor_right(1, Dir_forward,speed)
+   time.sleep(duration)
+
+def GoBw(speed, duration):
+   motor_left(1, Dir_backward,speed)
+   motor_right(1, Dir_backward,speed)
+   time.sleep(duration)
+
+def RotateLeft(speed, duration):
+   motor_left(1, Dir_backward,speed)
+   motor_right(1, Dir_forward,speed)
+   time.sleep(duration)
+
+def RotateRight(speed, duration):
+   motor_left(1, Dir_forward,speed)
+   motor_right(1, Dir_backward,speed)
+   time.sleep(duration)
+
 def main():
    setup()
-   motor_left(1, Dir_forward,50)
-   motor_right(1, Dir_forward,50)
-   time.sleep(2)
+   GoFw(50,2)
+   GoBw(50,2)
+   RotateLeft(50,2)
+   RotateRight(50,2)
+   
    motorStop()
 
 if __name__ == '__main__':
