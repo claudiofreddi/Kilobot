@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\me\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.10\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:////home/claudio/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.10/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
       
       
       
@@ -262,11 +262,12 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <img src=".\images\LogoCli.png" alt="drawing" width="100">
-<h1 class="mume-header" id="kilobot"><strong>KILOBOT</strong></h1>
+<h1 class="mume-header" id="kilobot"><strong>Kilobot</strong></h1>
 
-<h3 class="mume-header" id="my-first-robot"><strong>My First Robot</strong></h3>
+<h3 class="mume-header" id="my-first-robot-in-ros2"><strong>My First Robot in ROS2</strong></h3>
 
-<h6 class="mume-header" id="claudio-freddi">Claudio Freddi</h6>
+<p><img src="image-11.png" alt="Alt text"> <img src="image-9.png" alt="Alt text"></p>
+<h6 class="mume-header" id="autore-claudio-freddi">Autore: Claudio Freddi</h6>
 
 <h2 class="mume-header" id="introduzione">Introduzione</h2>
 
@@ -283,7 +284,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <h5 class="mume-header" id="2-hardware-necessario1-hardware-necessario"><a href="#1-Hardware-Necessario">2. Hardware necessario</a></h5>
 
-<h5 class="mume-header" id="3-installazione3-installazione"><a href="#3-Installazione">3. Installazione</a></h5>
+<h5 class="mume-header" id="3-installazione-software-base3-installazione-software-base"><a href="#3.-Installazione-Software-Base">3. Installazione Software Base</a></h5>
 
 <h5 class="mume-header" id="4-setup-robot4-setup-robot"><a href="#4-Setup-Robot">4. Setup Robot</a></h5>
 
@@ -329,8 +330,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <img src="image.png" alt="description" style="border: 0px solid gray;" width="100  ">
 <p>Questo Software permette di connettersi al Mini PC da remoto per una gestione da out of office.</p>
-<pre class="language-text">https://www.zoho.com/assist/
-</pre>
+<p><a href="https://www.zoho.com/assist/">https://www.zoho.com/assist/</a></p>
 <p>Servizio &quot;<strong>Unattened Remote Access</strong>&quot; (a pagamento, 120 Euro/anno fino a 25 unattended computers )</p>
 <h2 class="mume-header" id="2-hardware-necessario">2. Hardware Necessario</h2>
 
@@ -395,32 +395,154 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>AFTERTECH PACCO BATTERIA PILA 12V 10000mAh 10Ah RICARICABILE AL LITIO 120x65x31mm F2D5<br>
 <img src="413PRZQJ1IL._SY180_.jpg" alt="Alt text"></p>
-<h2 class="mume-header" id="3-installazione-software-base">3. Installazione Software Base</h2>
+<h3 class="mume-header" id="controller-xbox-one">Controller XBox One</h3>
 
-<h3 class="mume-header" id="mini-pc-1">Mini PC</h3>
+<p><img src="image-18.png" alt="Alt text"></p>
+<h2 class="mume-header" id="3-installazione-software-base">3. Installazione-Software-Base</h2>
 
-<p>Installa <strong>Ubuntu</strong> con Dual Boot su PC Windows 11</p>
-<pre class="language-text">https://www.freecodecamp.org/news/how-to-dual-boot-windows-10-and-ubuntu-linux-dual-booting-tutorial/
+<h3 class="mume-header" id="os-ubuntu-su-mini-pc-">OS Ubuntu su Mini PC !</h3>
+
+<p>Installa <strong>Ubuntu (22.04 LTS)</strong> con Dual Boot su PC Windows 11</p>
+<p><a href="https://www.freecodecamp.org/news/how-to-dual-boot-windows-10-and-ubuntu-linux-dual-booting-tutorial/">https://www.freecodecamp.org/news/how-to-dual-boot-windows-10-and-ubuntu-linux-dual-booting-tutorial/</a></p>
+<p>Installa <strong>ROS2 Humble</strong></p>
+<p><a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html">https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html</a></p>
+<pre class="language-text">source /opt/ros/humble/setup.bash       ## need to know ROS dirs
+source ~/dev_ws/src/install/setup.bash  ## need to know ws dir
 </pre>
-<h3 class="mume-header" id="raspberry-pi-4-b--robotrpi-1">Raspberry Pi 4 B+  (RobotRPi)</h3>
+<h3 class="mume-header" id="os-ubuntu-su-raspberry-pi-4-b--robotrpi">OS Ubuntu su Raspberry Pi 4 B+  (RobotRPi)</h3>
 
-<p>Installa <strong>Ubuntu</strong> on Raspberry Pi</p>
-<pre class="language-text">https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/
-</pre>
+<p>Installa <strong>Ubuntu (22.04 LTS)</strong> on Raspberry Pi</p>
+<p><a href="https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/">https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/</a></p>
 <p>Installa <strong>ROS2 Humble</strong> on Raspberry Pi</p>
-<pre class="language-text">https://roboticsbackend.com/install-ros2-on-raspberry-pi/
+<p><a href="https://roboticsbackend.com/install-ros2-on-raspberry-pi/">https://roboticsbackend.com/install-ros2-on-raspberry-pi/</a></p>
+<pre class="language-text">source /opt/ros/humble/setup.bash        ## need to know ROS dirs
+source ~/robotws/src/install/setup.bash  ## need to know ws dir
 </pre>
-<h3 class="mume-header" id="wifi-router-robotlan">Wifi Router (RobotLAN)</h3>
+<h3 class="mume-header" id="software-generico-per-ubuntu-di-utilit%C3%A0">Software Generico (per Ubuntu di utilit&#xE0;)</h3>
 
-<p>Configurato come</p>
-<h3 class="mume-header" id="abilitare-il-remote-access-in-linux-zoho-unattended">Abilitare il Remote Access in Linux (Zoho Unattended)</h3>
+<h4 class="mume-header" id="installa-ipscan">Installa IPScan</h4>
 
-<p>Per abilitare l&apos;accesso remoto al software Liunx:</p>
+<p>Download da sitoweb  IPScan</p>
+<p><a href="https://angryip.org/download/#linux">https://angryip.org/download/#linux</a></p>
+<p>poi installare dalla cartella Dowload</p>
+<pre class="language-text">sudo apt install /download/ipscan_2.9.1_amd64.deb
+</pre>
+<h4 class="mume-header" id="installa-tilix-multi-terminal-application">Installa Tilix (Multi Terminal Application)</h4>
+
+<pre class="language-text">sudo apt-get install -y tilix 
+</pre>
+<h4 class="mume-header" id="installa-zoho-remote-access">Installa Zoho (Remote access)</h4>
+
+<p>Da piattaforma zoho</p>
+<img src="image-2.png" alt="description" style="border: 1px solid gray;" width="600">
+<p><img src="image-7.png" alt="Alt text"></p>
+<h5 class="mume-header" id="per-abilitare-il-remote-access-in-linux-zoho-unattended">Per abilitare il Remote Access in Linux (Zoho Unattended)</h5>
+
+<p>Per abilitare l&apos;accesso remoto al software Linux:</p>
 <ol>
-<li>Open the file /etc/gdm/custom.conf in a text editor</li>
+<li>Open the file <strong>/etc/gdm/custom.conf</strong> in a text editor</li>
 <li><strong>Un-comment the line: &quot;#WaylandEnable=false&quot;</strong> (remove the # before the line)</li>
 <li>Save the file and reboot the machine</li>
 </ol>
+<p>Per abilitare l&apos;accesso remoto al software Linux:</p>
+<pre class="language-text">sudo apt install openssh-server # Install
+
+sudo systemctl status ssh       # Check Status
+
+sudo ufw allow ssh              #  Enable
+</pre>
+<p><img src="image-8.png" alt="Alt text"></p>
+<h4 class="mume-header" id="installa-github-alt-textimage-12png">Installa GitHub <img src="image-12.png" alt="Alt text"></h4>
+
+<p>E&apos; importante usare il repository di GitHub perch&#xE8; permette di gestire le versioni di codice e condividere lo stesso codice tra la macchina RobotDev e RobotRp</p>
+<p><strong>Installazione</strong></p>
+<pre class="language-text">sudo apt install git
+</pre>
+<p><strong>Configurazione</strong></p>
+<pre class="language-text">git config --global user.name claudiofreddi
+git config --global user.email git@claudiofreddi
+git config --global push.default simple
+</pre>
+<p><strong>Repositories</strong></p>
+<p><strong>Main Code (Min PC e Raspberry)</strong></p>
+<p><a href="https://github.com/claudiofreddi/kilobot">https://github.com/claudiofreddi/kilobot</a></p>
+<p><strong>Ardiuno Code</strong></p>
+<p><a href="https://github.com/claudiofreddi/kilobot_arduino">https://github.com/claudiofreddi/kilobot_arduino</a></p>
+<p><strong>Working Folder</strong></p>
+<p><strong>Min PC</strong></p>
+<pre class="language-text">~/dev_ws/src/kilobot
+~/robot_arduino/kilobot_arduino
+</pre>
+<p><strong>Raspberry</strong></p>
+<pre class="language-text">~/robot_ws/src/kilobot
+~/robot_arduino/kilobot_arduino
+</pre>
+<h6 class="mume-header" id="installa-github">Installa GitHub</h6>
+
+<p>Link di riepilogo dei comandi PULL e PUSH utile</p>
+<pre class="language-text">http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/
+</pre>
+<h3 class="mume-header" id="software-per-ros2-humble">Software per ROS2 (Humble)</h3>
+
+<h3 class="mume-header" id="install-xacro-e-joint-state-publisher-gui">Install Xacro e joint-state-publisher-gui</h3>
+
+<pre class="language-text">sudo apt install ros-humble-xacro ros-humble-joint-state-publisher-gui
+</pre>
+<h3 class="mume-header" id="install-tf2-tools-and-transformation">Install Tf2 tools and Transformation</h3>
+
+<p>Questi sono importanti per interfacciarsi con rViz2</p>
+<pre class="language-text">sudo apt-get install ros-humble-tf2-tools ros-humble-tf-transformations
+
+ros2 run tf2_tools view_frames  #Check it
+</pre>
+<p><img src="image-4.png" alt="Alt text"></p>
+<h3 class="mume-header" id="rviz2">RViz2</h3>
+
+<p>Questo tool permette di vedere la struttura del robot.<br>
+Il lancio di Rviz2 deve essere preceduto da</p>
+<pre class="language-text">robot_state_publisher           # aspetto statico del robot
+joint_state_publisher_gui       # aspetto dinamico del robot
+rviz2                           # rviz2
+</pre>
+<p>il lancio lo su pu&#xF2; fare con il comando</p>
+<pre class="language-text">ros2 launch kilobot rsp.launch.py  # lancia la sequenza
+</pre>
+<p>Utilizza i dati della cartella &quot;\Description\*.xacro&quot; dei file xacro.</p>
+<img src="image-5.png" alt="description" style="border: 1px solid gray;" width="1000">
+<h3 class="mume-header" id="turtlesim">Turtlesim</h3>
+
+<img src="image-19.png" alt="description" style="border: 1px solid gray;" width="200">
+<p>Per eseguire la Turtlesim lanciare</p>
+<pre class="language-text">ros2 run turtlesim turtlesim_node
+</pre>
+<h3 class="mume-header" id="joystick">Joystick</h3>
+
+<p><img src="image-18.png" alt="Alt text"></p>
+<p>Per attivare il Joystick lanciare</p>
+<pre class="language-text">ros2 run launch kilobot joystick.launch.py
+</pre>
+<p>che esegue</p>
+<pre class="language-text">ros2 joy joy_node # with params
+ros2 teleop_twist_joy teleop_node # with params and remap &apos;/cmd_vel&apos; =&gt; &apos;/turtle1/cmd_vel0
+</pre>
+<p>controllo con</p>
+<pre class="language-text">ros2  topic echo __/turtle1/cmd_vel__       # esito del topic
+
+ros2 run joy joy_enumarate_devices          # elenco device e ID controller (es. 0)
+</pre>
+<p><img src="image-13.png" alt="Alt text"></p>
+<p><em>Although splitting things up might seem more complex, it means that we don&#x2019;t need to rewrite the Twist calculations for every joystick out there, and we don&#x2019;t need to rewrite the joystick driver code for every possible application.</em></p>
+<p><em>(from <a href="https://articulatedrobotics.xyz/mobile-robot-14a-teleop/">https://articulatedrobotics.xyz/mobile-robot-14a-teleop/</a>)</em></p>
+<h3 class="mume-header" id="gazebo">GAZEBO</h3>
+
+<p>Per installazione</p>
+<pre class="language-text">sudo apt install ros-humble-gazebo-ros-pkgs
+</pre>
+<p>Esecuzione</p>
+<pre class="language-text">ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity some_name
+
+ros2 launch gazebo_ros gazebo.launch.py world:=src/robot_testing/worlds/world6.world
+</pre>
 <h3 class="mume-header" id="joystick-driver">Joystick Driver</h3>
 
 <p>Per l&apos;installazione del joystick ho trovato qualche difficolt&#xE0; con il joystick della <strong>XBOX One</strong> finch&#xE8; non ho trovato questo link utilissimo.</p>
@@ -491,22 +613,23 @@ ros2 topic echo /joy # &lt;-- Run in second terminal (displaying the outputs)
 </pre>
 <h2 class="mume-header" id="3-setup-robot">3. Setup Robot</h2>
 
+<h4 class="mume-header" id="motor-connections-mode">Motor Connections Mode</h4>
+
+<p><img src="schema_images/Motor_Modes.png" alt="Alt text"></p>
+<p><img src="schema_images/RaspBerryPinoutNew.png" alt="Alt text"></p>
 <h2 class="mume-header" id="97-code-links">97. Code Links</h2>
 
 <h4 class="mume-header" id="ros-arduino-bridge--josh-newans">ROS Arduino Bridge  (Josh Newans)</h4>
 
 <p>Questa implementazione abilita Arduino</p>
-<pre class="language-text">https://github.com/joshnewans/ros_arduino_bridge/tree/main/ROSArduinoBridge
-</pre>
+<p><a href="https://github.com/joshnewans/ros_arduino_bridge/tree/main/ROSArduinoBridge">https://github.com/joshnewans/ros_arduino_bridge/tree/main/ROSArduinoBridge</a></p>
 <h4 class="mume-header" id="ros-arduino-bridge--original---homebrew-robotics-club">ROS Arduino Bridge  (Original - HomeBrew Robotics Club)</h4>
 
-<pre class="language-text">https://github.com/hbrobotics/ros_arduino_bridge
-</pre>
+<p><a href="https://github.com/hbrobotics/ros_arduino_bridge">https://github.com/hbrobotics/ros_arduino_bridge</a></p>
 <h4 class="mume-header" id="pyserial-serial-comunicartion-python">PySerial (Serial comunicartion Python)</h4>
 
 <p>This module encapsulates the access for the serial port. It provides backends for Python running on Windows, OSX, Linux, BSD (possibly any POSIX compliant system) and IronPython. The module named &quot;serial&quot; automatically selects the appropriate backend.</p>
-<pre class="language-text">https://github.com/pyserial/pyserial/tree/master
-</pre>
+<p><a href="https://github.com/pyserial/pyserial/tree/master">https://github.com/pyserial/pyserial/tree/master</a></p>
 <h4 class="mume-header" id="yahboom-robot-shield">YAHBOOM Robot Shield</h4>
 
 <pre class="language-text">http://www.yahboom.net/study/ROS-Driver-Board
@@ -515,17 +638,18 @@ ros2 topic echo /joy # &lt;-- Run in second terminal (displaying the outputs)
 
 <h4 class="mume-header" id="ros2-humble-documentation">ROS2 Humble Documentation</h4>
 
-<pre class="language-text">https://docs.ros.org/en/humble/
-</pre>
+<p><a href="https://docs.ros.org/en/humble/">https://docs.ros.org/en/humble/</a></p>
 <h4 class="mume-header" id="ros2-tutorial-josh-newans">ROS2 Tutorial (Josh Newans)</h4>
 
 <p>Utilissimo sia per la costruzione del robot che per la parte teorica</p>
-<pre class="language-text">https://articulatedrobotics.xyz
-</pre>
+<p><a href="https://articulatedrobotics.xyz">https://articulatedrobotics.xyz</a></p>
+<h4 class="mume-header" id="github-basics">GitHub Basics</h4>
+
+<p><a href="http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/">http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/</a></p>
 <h4 class="mume-header" id="flash-arduino-da-raspberry-da-remoto-josh-newans">Flash Arduino da Raspberry da remoto (Josh Newans)</h4>
 
-<p>Spiega come caricare del software su Arduino da remoto, ovvero connettendosi con Visual Studio dalla macchina RobotDev a RobotRPI a cui &#xE8; connesso Arduino con USB seriale<br>
-<a href="https://www.youtube.com/watch?v=2BJ-iJF04VA&amp;list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&amp;index=21">https://www.youtube.com/watch?v=2BJ-iJF04VA&amp;list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&amp;index=21</a></p>
+<p>Spiega come caricare del software su Arduino da remoto, ovvero connettendosi con Visual Studio dalla macchina RobotDev a RobotRPI a cui &#xE8; connesso Arduino con USB seriale</p>
+<p><a href="https://www.youtube.com/watch?v=2BJ-iJF04VA&amp;list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&amp;index=21">https://www.youtube.com/watch?v=2BJ-iJF04VA&amp;list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&amp;index=21</a></p>
 <h4 class="mume-header" id="connessione-raspberry-e-arduino-modalit%C3%A0-possibili">Connessione Raspberry e Arduino (modalit&#xE0; possibili)</h4>
 
 <p>How to Connect and Interface a Raspberry Pi With an Arduino ?</p>
@@ -536,14 +660,76 @@ ros2 topic echo /joy # &lt;-- Run in second terminal (displaying the outputs)
 <p><img src="image-1.png" alt="Alt text"></p>
 <h2 class="mume-header" id="99-useful-commands">99. Useful Commands</h2>
 
+<h5 class="mume-header" id="connessione-a-roborrpi">Connessione a RoborRPI</h5>
+
+<pre class="language-text">ssh claudio@192.168.8.201 
+</pre>
+<h5 class="mume-header" id="test-listener-and-talker">TEST LISTENER and TALKER</h5>
+
+<p>Per verificare se il sistema funzione</p>
+<pre class="language-text">ros2 run demo_nodes_py listener
+
+ros2 run demo_nodes_py talker
+</pre>
+<p><img src="image-15.png" alt="Alt text"></p>
+<h5 class="mume-header" id="sourcing-folder-homebashrc">Sourcing Folder (/home/.bashrc)</h5>
+
+<pre class="language-text">source /opt/ros/humble/setup.bash       ## need to know ROS dirs
+
+# MiniPC
+source ~/dev_ws/src/install/setup.bash  ## need to know ws dir
+
+# Raspberry
+source ~/robotws/src/install/setup.bash  ## need to know ws dir
+</pre>
+<h5 class="mume-header" id="compiling-code">Compiling Code</h5>
+
+<pre class="language-text">colcon build --symlink-install 
+</pre>
+<h5 class="mume-header" id="show-ros-nodes-graph">Show ROS Nodes Graph</h5>
+
+<pre class="language-text">ros2 run rqt_graph rqt_graph
+</pre>
+<h5 class="mume-header" id="run-rviz2">Run RViz2</h5>
+
+<pre class="language-text">ros2 launch kilobot rsp.launch.py
+</pre>
+<p><img src="image-16.png" alt="Alt text"></p>
+<p><img src="image-17.png" alt="Alt text"></p>
 <p><strong>JOYSTICK</strong> check available controllers</p>
 <pre class="language-text">ros2 run joy joy_enumerate_devices
+</pre>
+<h5 class="mume-header" id="run-joystick">Run Joystick</h5>
+
+<p>Connect Joystick</p>
+<pre class="language-text">ros2 launch kilobot joystick.launch.py
+
+ros2 run turtlesim turtlesim_node
+</pre>
+<p>verfica</p>
+<pre class="language-text">ros2 topic list
+
+/joy
+/joy/set_feedback
+/parameter_events
+/rosout
+/turtle1/cmd_vel
+/turtle1/color_sensor
+/turtle1/pose
+</pre>
+<p><img src="image-14.png" alt="Alt text"></p>
+<p>Config file: <em>/home/claudio/dev_ws/src/kilobot/config/joystick.yaml</em></p>
+<pre class="language-text">...
+require_enable_button: true # press key to use
+enable_button: 6            # Left shoulder button
+enable_turbo_button: 7      # Right shoulder button
+...
 </pre>
 <h1 class="mume-header" id="sample">SAMPLE</h1>
 
 <p><strong>Nested HTML</strong></p>
-<iframe src="./html/res_Codifica_Nuovi_Clienti.html" height="500px" width="1000px"></iframe>
-<p><a href="./file.html">Simple Link to HTML</a></p>
+<iframe src="./html/res_Codifica_Nuovi_Clienti.html" <p>height=&quot;500px&quot; width=&quot;1000px&quot;&gt;</iframe><br>
+<a href="./file.html">Simple Link to HTML</a><p></p>
 <p><strong>Image sized</strong></p>
 <img src="./images/Logo.png" alt="description" style="border: 0px solid gray;" width="200">
 <p><strong>Nested SQL with height</strong></p>
@@ -551,7 +737,7 @@ ros2 topic echo /joy # &lt;-- Run in second terminal (displaying the outputs)
 <pre data-role="codeBlock" data-info="sql" class="language-sql"></pre></div>
 <p><strong>SQL</strong></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql"></pre><p><span style="color:gray"><b>JSON Risorsa</b></span><br></p>
-<p><a target="_blank" href="jsonfilename.json" download="filename.json">Download</a><br>
+<p><a target="_blank" href="../jsonfilename.json" download="filename.json">Download</a><br>
 <br></p>
 <p><span style="color:gray"><b>Gray Title</b></span><br></p>
 <p><em><strong>Bold And Underlined</strong></em></p>
