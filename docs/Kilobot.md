@@ -1,10 +1,13 @@
 
 <img src=".\images\LogoCli.png" alt="drawing" width="100"/>
 
-#**KILOBOT**
-###**My First Robot**
 
-###### Claudio Freddi
+#**Kilobot**
+
+###**My First Robot in ROS2**
+![Alt text](image-11.png) ![Alt text](image-9.png)
+
+###### Autore: Claudio Freddi
 
 ## Introduzione
 
@@ -65,7 +68,7 @@ KEYESTUDIO Mega 2560 R3 Sensor Shield Scheda di espansione per Arduino Mega R3 K
 
 Questo Software permette di connettersi al Mini PC da remoto per una gestione da out of office.
 
-    https://www.zoho.com/assist/
+ https://www.zoho.com/assist/
 
 Servizio "__Unattened Remote Access__" (a pagamento, 120 Euro/anno fino a 25 unattended computers )
 
@@ -149,43 +152,38 @@ AFTERTECH PACCO BATTERIA PILA 12V 10000mAh 10Ah RICARICABILE AL LITIO 120x65x31m
 ## 3. Installazione-Software-Base
 
 
-### OS Ubuntu su Mini PC 
+### OS Ubuntu su Mini PC !
 
-Installa __Ubuntu__ con Dual Boot su PC Windows 11
+Installa __Ubuntu (22.04 LTS)__ con Dual Boot su PC Windows 11
 
-    https://www.freecodecamp.org/news/how-to-dual-boot-windows-10-and-ubuntu-linux-dual-booting-tutorial/
+ https://www.freecodecamp.org/news/how-to-dual-boot-windows-10-and-ubuntu-linux-dual-booting-tutorial/
 
 Installa __ROS2 Humble__ 
 
-    https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
+ https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
 
 ### OS Ubuntu su Raspberry Pi 4 B+  (RobotRPi)
 
-Installa __Ubuntu__ on Raspberry Pi
+Installa __Ubuntu (22.04 LTS)__ on Raspberry Pi
 
-    https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/
+ https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/
 
 Installa __ROS2 Humble__ on Raspberry Pi
 
-    https://roboticsbackend.com/install-ros2-on-raspberry-pi/
+ https://roboticsbackend.com/install-ros2-on-raspberry-pi/
 
 
-### Software Generico (per Ubunto di utilità)
+### Software Generico (per Ubuntu di utilità)
 
 #### Installa IPScan
 
 Download da sitoweb  IPScan 
     
-    https://angryip.org/download/#linux
+ https://angryip.org/download/#linux
 
 poi installare dalla cartella Dowload 
 
     sudo apt install /download/ipscan_2.9.1_amd64.deb
-
-#### Installa Tilix (Multi Terminal Application)
-
-    sudo apt-get install -y tilix 
-
 
 #### Installa Tilix (Multi Terminal Application)
 
@@ -198,6 +196,7 @@ Da piattaforma zoho
 
 <img src="image-2.png" alt="description" style="border: 1px solid gray;" width="600">
 
+![Alt text](image-7.png)
 
 ##### Per abilitare il Remote Access in Linux (Zoho Unattended)
 Per abilitare l'accesso remoto al software Linux: 
@@ -214,23 +213,52 @@ Per abilitare l'accesso remoto al software Linux:
 
     sudo ufw allow ssh              #  Enable
 
+![Alt text](image-8.png)
 
-#### Installa GitHub
+#### Installa GitHub ![Alt text](image-12.png)
 
-E' importante usare il repository di GitHub perchè permette di gestire le versioni di codice e condividere lo stesso codice tra la macchina RobotDev e RobotRpi
+E' importante usare il repository di GitHub perchè permette di gestire le versioni di codice e condividere lo stesso codice tra la macchina RobotDev e RobotRp
 
-![Alt text](image-6.png)
-
-Installazione
+__Installazione__
 
     sudo apt install git
 
-Configurazione 
+__Configurazione__
 
     git config --global user.name claudiofreddi
     git config --global user.email git@claudiofreddi
+    git config --global push.default simple
 
-### Software Generico (per ROS2)
+__Repositories__
+
+__Main Code (Min PC e Raspberry)__
+
+ https://github.com/claudiofreddi/kilobot
+
+__Ardiuno Code__
+
+ https://github.com/claudiofreddi/kilobot_arduino
+
+
+__Working Folder__
+
+__Min PC__
+
+    ~/dev_ws/src/kilobot
+    ~/robot_arduino/kilobot_arduino
+
+__Raspberry__
+
+    ~/robot_ws/src/kilobot
+    ~/robot_arduino/kilobot_arduino
+
+###### Installa GitHub
+
+Link di riepilogo dei comandi PULL e PUSH utile
+
+    http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/
+
+### Software per ROS2 (Humble)
 
 ### Install Xacro e joint-state-publisher-gui
 
@@ -311,7 +339,7 @@ Esecuzione
 ### Joystick Driver
 Per l'installazione del joystick ho trovato qualche difficoltà con il joystick della __XBOX One__ finchè non ho trovato questo link utilissimo.
 
-    https://atar-axis.github.io/xpadneo/
+ https://atar-axis.github.io/xpadneo/
 
 Estratto solo per __XBox One__
 
@@ -417,16 +445,16 @@ In ROS2 to check available controllers, run
 #### ROS Arduino Bridge  (Josh Newans)
 Questa implementazione abilita Arduino 
 
-    https://github.com/joshnewans/ros_arduino_bridge/tree/main/ROSArduinoBridge
+ https://github.com/joshnewans/ros_arduino_bridge/tree/main/ROSArduinoBridge
 
 #### ROS Arduino Bridge  (Original - HomeBrew Robotics Club) 
 
-    https://github.com/hbrobotics/ros_arduino_bridge
+ https://github.com/hbrobotics/ros_arduino_bridge
 
 #### PySerial (Serial comunicartion Python)
 This module encapsulates the access for the serial port. It provides backends for Python running on Windows, OSX, Linux, BSD (possibly any POSIX compliant system) and IronPython. The module named "serial" automatically selects the appropriate backend.
 
-    https://github.com/pyserial/pyserial/tree/master
+ https://github.com/pyserial/pyserial/tree/master
 
 
 #### YAHBOOM Robot Shield
@@ -439,27 +467,31 @@ This module encapsulates the access for the serial port. It provides backends fo
 ## 98. Useful Tutorial Links (How To)
 
 #### ROS2 Humble Documentation
-    https://docs.ros.org/en/humble/
+ https://docs.ros.org/en/humble/
 
 #### ROS2 Tutorial (Josh Newans)
 Utilissimo sia per la costruzione del robot che per la parte teorica
 
-    https://articulatedrobotics.xyz
+https://articulatedrobotics.xyz
+
+#### GitHub Basics
+
+http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/
 
 #### Flash Arduino da Raspberry da remoto (Josh Newans) 
 Spiega come caricare del software su Arduino da remoto, ovvero connettendosi con Visual Studio dalla macchina RobotDev a RobotRPI a cui è connesso Arduino con USB seriale
 
-    https://www.youtube.com/watch?v=2BJ-iJF04VA&list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&index=21
+ https://www.youtube.com/watch?v=2BJ-iJF04VA&list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&index=21
 
 #### Connessione Raspberry e Arduino (modalità possibili)
 How to Connect and Interface a Raspberry Pi With an Arduino ?
 
-    https://rishabhdevyadav.medium.com/how-to-connect-and-interface-a-raspberry-pi-with-an-arduino-4153e3c09e7c
+ https://rishabhdevyadav.medium.com/how-to-connect-and-interface-a-raspberry-pi-with-an-arduino-4153e3c09e7c
 
 
 #### The Ultimate Guide to using Motors in Robotics (including ROS, Raspberry Pi) - Connect Motor Shield 
 
-    https://www.youtube.com/watch?v=-PCuDnpgiew
+ https://www.youtube.com/watch?v=-PCuDnpgiew
 
 ![Alt text](image-1.png)
 
