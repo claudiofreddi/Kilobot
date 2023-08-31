@@ -149,6 +149,10 @@ AZDelivery 3 x Modulo Relay 5V a 2 canali con optoaccoppiatore Low-Level-Trigger
 AFTERTECH PACCO BATTERIA PILA 12V 10000mAh 10Ah RICARICABILE AL LITIO 120x65x31mm F2D5
 ![Alt text](413PRZQJ1IL._SY180_.jpg)
 
+### Controller XBox One
+
+![Alt text](image-18.png)
+
 ## 3. Installazione-Software-Base
 
 
@@ -162,6 +166,11 @@ Installa __ROS2 Humble__
 
  https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
 
+
+    source /opt/ros/humble/setup.bash       ## need to know ROS dirs
+    source ~/dev_ws/src/install/setup.bash  ## need to know ws dir
+    
+
 ### OS Ubuntu su Raspberry Pi 4 B+  (RobotRPi)
 
 Installa __Ubuntu (22.04 LTS)__ on Raspberry Pi
@@ -172,6 +181,8 @@ Installa __ROS2 Humble__ on Raspberry Pi
 
  https://roboticsbackend.com/install-ros2-on-raspberry-pi/
 
+    source /opt/ros/humble/setup.bash        ## need to know ROS dirs
+    source ~/robotws/src/install/setup.bash  ## need to know ws dir
 
 ### Software Generico (per Ubuntu di utilità)
 
@@ -295,11 +306,16 @@ Utilizza i dati della cartella "\Description\\*.xacro" dei file xacro.
 
 ### Turtlesim
 
-Per eseguire la Turtlesimo lanciare
+
+<img src="image-19.png" alt="description" style="border: 1px solid gray;" width="200">
+
+Per eseguire la Turtlesim lanciare
 
     ros2 run turtlesim turtlesim_node
 
-### Joystick
+### Joystick 
+
+![Alt text](image-18.png)
 
 Per attivare il Joystick lanciare
  
@@ -317,7 +333,11 @@ controllo con
 
     ros2 run joy joy_enumarate_devices          # elenco device e ID controller (es. 0)
 
+![Alt text](image-13.png)
 
+_Although splitting things up might seem more complex, it means that we don’t need to rewrite the Twist calculations for every joystick out there, and we don’t need to rewrite the joystick driver code for every possible application._
+
+_(from https://articulatedrobotics.xyz/mobile-robot-14a-teleop/)_
 
 ### GAZEBO
 
@@ -437,8 +457,11 @@ In ROS2 to check available controllers, run
 
 ## 3. Setup Robot
 
+#### Motor Connections Mode 
 
+![Alt text](schema_images/Motor_Modes.png)
 
+![Alt text](schema_images/RaspBerryPinoutNew.png)
 
 ## 97. Code Links
 
@@ -497,11 +520,11 @@ How to Connect and Interface a Raspberry Pi With an Arduino ?
 
 ## 99. Useful Commands
 
-**Connessione a RoborRPI** 
+##### Connessione a RoborRPI
 
     ssh claudio@192.168.8.201 
 
-**TEST LINSTENER and TALKER** 
+##### TEST LISTENER and TALKER
 
 Per verificare se il sistema funzione
 
@@ -509,11 +532,33 @@ Per verificare se il sistema funzione
 
     ros2 run demo_nodes_py talker
 
+![Alt text](image-15.png)
+
+##### Sourcing Folder (/home/.bashrc)
+
+    source /opt/ros/humble/setup.bash       ## need to know ROS dirs
+    
+    # MiniPC
+    source ~/dev_ws/src/install/setup.bash  ## need to know ws dir
+    
+    # Raspberry
+    source ~/robotws/src/install/setup.bash  ## need to know ws dir
+
+##### Compiling Code
+
+    colcon build --symlink-install 
+    
+##### Show ROS Nodes Graph
+
+    ros2 run rqt_graph rqt_graph
+
 ##### Run RViz2
 
     ros2 launch kilobot rsp.launch.py
 
+![Alt text](image-16.png)
 
+![Alt text](image-17.png)
 
 **JOYSTICK** check available controllers
 
@@ -528,13 +573,28 @@ Connect Joystick
 
     ros2 run turtlesim turtlesim_node
 
-    
+verfica
+
+    ros2 topic list
+
+    /joy
+    /joy/set_feedback
+    /parameter_events
+    /rosout
+    /turtle1/cmd_vel
+    /turtle1/color_sensor
+    /turtle1/pose
 
 
-**Compile Code** 
+![Alt text](image-14.png)
 
-    colcon build --symlink-install 
+Config file: _/home/claudio/dev_ws/src/kilobot/config/joystick.yaml_
 
+    ...
+    require_enable_button: true # press key to use
+    enable_button: 6            # Left shoulder button
+    enable_turbo_button: 7      # Right shoulder button
+    ...
 
 #SAMPLE
 
