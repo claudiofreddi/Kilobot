@@ -1,10 +1,8 @@
 
-<img src=".\images\LogoCli.png" alt="drawing" width="100"/>
-
-
-#**Kilobot**
+##**Kilobot**
 
 ###**My First Robot in ROS2**
+
 ![Alt text](image-11.png) ![Alt text](image-9.png)
 
 ###### Autore: Claudio Freddi
@@ -31,23 +29,34 @@ Questo documento ha lo scopo di sintetizzare:
 ## 1. Ambiente Operativo
 
 ### Mini PC 
+
 #####Nome: RobotDev
+
 #####IP: 192.168.8.200 
+
 #####User: claudio
+
 Questo è il PC principale da cui si sviluppa e si controllano gli altri elementi dell'architettura.
 
 ![Alt text](41nLTxI0nPL._SS284_.jpg)
 
 ### Raspberry Pi 4 B+  (RobotRPi) 
+
 #####Nome: RobotRPI
+
+
 #####IP: 192.168.8.201
+
 #####user: claudio
+
 Questo è il cervello principale a bordo di __Kilobot__ che svolge le funzioni autonome.
 
 ![Alt text](51nTvEL3tKL._SS284_.jpg)
 
 ### Wifi Router 
+
 #####Nome: RobotLAN
+
 Il router è utile per creare una rete separata con IP fissi così da conoscere perfettamente come raggiungere una risorsa.
 
 ![Alt text](41MXeeI78JL._AC_SY240_.jpg)
@@ -55,6 +64,7 @@ Il router è utile per creare una rete separata con IP fissi così da conoscere 
 GL.iNET GL-MT300N-V2 (Mango) Mini portabile router da viaggio VPN, Mobile Hotspot in tasca, ripetitore bridge, range extender, OpenVPN Client, 300Mbps Wireless ad alte prestazioni, 128MB RAM
 
 ### Arduino 
+
 Questo è l'attuatore principale dei motori perchè come microprocessore è in grado di conrtollare con più precisione alcuni aspetti.
 
 KEYESTUDIO MEGA R3 2560 Plus Controller Board per Arduino IDE cavo USB compatibile
