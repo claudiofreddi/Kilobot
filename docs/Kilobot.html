@@ -261,8 +261,7 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <img src=".\images\LogoCli.png" alt="drawing" width="100">
-<h1 class="mume-header" id="kilobot"><strong>Kilobot</strong></h1>
+      <h2 class="mume-header" id="kilobot"><strong>Kilobot</strong></h2>
 
 <h3 class="mume-header" id="my-first-robot-in-ros2"><strong>My First Robot in ROS2</strong></h3>
 
@@ -280,18 +279,24 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 <h3 class="mume-header" id="list-of-contents">List of Contents</h3>
 
-<h5 class="mume-header" id="1-ambiente-operativo1-ambiente-operativo"><a href="#1-Ambiente-Operativo">1. Ambiente Operativo</a></h5>
+<h4 class="mume-header" id="1-ambiente-operativoambiente-operativo"><a href="#ambiente-operativo">1. Ambiente Operativo</a></h4>
 
-<h5 class="mume-header" id="2-hardware-necessario1-hardware-necessario"><a href="#1-Hardware-Necessario">2. Hardware necessario</a></h5>
+<h4 class="mume-header" id="2-hardware-necessariohardware-necessario"><a href="#hardware-necessario">2. Hardware Necessario</a></h4>
 
-<h5 class="mume-header" id="3-installazione-software-base3-installazione-software-base"><a href="#3.-Installazione-Software-Base">3. Installazione Software Base</a></h5>
+<h4 class="mume-header" id="3-installazione-software-baseinstallazione-software-base"><a href="#installazione-software-base">3. Installazione Software Base</a></h4>
 
-<h5 class="mume-header" id="4-setup-robot4-setup-robot"><a href="#4-Setup-Robot">4. Setup Robot</a></h5>
+<h4 class="mume-header" id="4-setup-robotsetup-robot"><a href="#setup-robot">4. Setup Robot</a></h4>
 
-<h5 class="mume-header" id="99-useful-commands99-useful-commands"><a href="#99-Useful-Commands">99. Useful Commands</a></h5>
+<h4 class="mume-header" id="5-run-kilobotrun-kilobot"><a href="#run-kilobot">5. Run Kilobot</a></h4>
 
-<h2 class="mume-header" id="1-ambiente-operativo">1. Ambiente Operativo</h2>
+<h5 class="mume-header" id="code-linkscode-links"><a href="#code-links">Code Links</a></h5>
 
+<h5 class="mume-header" id="useful-tutorial-links-how-touseful-tutorial-links"><a href="#useful-tutorial-links">Useful Tutorial Links (How To)</a></h5>
+
+<hr>
+<h2 class="mume-header" id="ambiente-operativo">Ambiente Operativo</h2>
+
+<hr>
 <h3 class="mume-header" id="mini-pc">Mini PC</h3>
 
 <h5 class="mume-header" id="nome-robotdev">Nome: RobotDev</h5>
@@ -322,18 +327,20 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="arduino">Arduino</h3>
 
 <p>Questo &#xE8; l&apos;attuatore principale dei motori perch&#xE8; come microprocessore &#xE8; in grado di conrtollare con pi&#xF9; precisione alcuni aspetti.</p>
-<p>KEYESTUDIO MEGA R3 2560 Plus Controller Board per Arduino IDE cavo USB compatibile<br>
-<img src="51xIYDZFqZL._SY180_.jpg" alt="Alt text"></p>
-<p>KEYESTUDIO Mega 2560 R3 Sensor Shield Scheda di espansione per Arduino Mega R3 Kit<br>
-<img src="61s1NLCuHhL._SX180_.jpg" alt="Alt text"></p>
+<p>KEYESTUDIO MEGA R3 2560 Plus Controller Board per Arduino IDE cavo USB compatibile</p>
+<p><img src="51xIYDZFqZL._SY180_.jpg" alt="Alt text"></p>
+<p>KEYESTUDIO Mega 2560 R3 Sensor Shield Scheda di espansione per Arduino Mega R3 Kit</p>
+<p><img src="61s1NLCuHhL._SX180_.jpg" alt="Alt text"></p>
 <h3 class="mume-header" id="zoho-assist">Zoho Assist</h3>
 
 <img src="image.png" alt="description" style="border: 0px solid gray;" width="100  ">
 <p>Questo Software permette di connettersi al Mini PC da remoto per una gestione da out of office.</p>
 <p><a href="https://www.zoho.com/assist/">https://www.zoho.com/assist/</a></p>
 <p>Servizio &quot;<strong>Unattened Remote Access</strong>&quot; (a pagamento, 120 Euro/anno fino a 25 unattended computers )</p>
-<h2 class="mume-header" id="2-hardware-necessario">2. Hardware Necessario</h2>
+<hr>
+<h2 class="mume-header" id="hardware-necessario">Hardware Necessario</h2>
 
+<hr>
 <p>In aggiunta a Mini PC, Raspberry , Arduino si elencano gli altri componenti utilizzati nella costruzione del robot</p>
 <h3 class="mume-header" id="yahboom-ros-expansion-board">Yahboom ROS Expansion Board</h3>
 
@@ -398,8 +405,10 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="controller-xbox-one">Controller XBox One</h3>
 
 <p><img src="image-18.png" alt="Alt text"></p>
-<h2 class="mume-header" id="3-installazione-software-base">3. Installazione-Software-Base</h2>
+<hr>
+<h2 class="mume-header" id="installazione-software-base">Installazione Software Base</h2>
 
+<hr>
 <h3 class="mume-header" id="os-ubuntu-su-mini-pc-">OS Ubuntu su Mini PC !</h3>
 
 <p>Installa <strong>Ubuntu (22.04 LTS)</strong> con Dual Boot su PC Windows 11</p>
@@ -611,14 +620,22 @@ wait for the gamepad to show up in bluetoothctl, remember the address (e.g. <cod
 <pre class="language-text">ros2 run joy joy_node # &lt;-- Run in first terminal (running the node)
 ros2 topic echo /joy # &lt;-- Run in second terminal (displaying the outputs)
 </pre>
-<h2 class="mume-header" id="3-setup-robot">3. Setup Robot</h2>
+<hr>
+<h2 class="mume-header" id="setup-robot">Setup Robot</h2>
 
+<hr>
 <h4 class="mume-header" id="motor-connections-mode">Motor Connections Mode</h4>
 
 <p><img src="schema_images/Motor_Modes.png" alt="Alt text"></p>
 <p><img src="schema_images/RaspBerryPinoutNew.png" alt="Alt text"></p>
-<h2 class="mume-header" id="97-code-links">97. Code Links</h2>
+<hr>
+<h2 class="mume-header" id="run-kilobot">Run Kilobot</h2>
 
+<hr>
+<hr>
+<h2 class="mume-header" id="code-links">Code Links</h2>
+
+<hr>
 <h4 class="mume-header" id="ros-arduino-bridge--josh-newans">ROS Arduino Bridge  (Josh Newans)</h4>
 
 <p>Questa implementazione abilita Arduino</p>
@@ -634,8 +651,10 @@ ros2 topic echo /joy # &lt;-- Run in second terminal (displaying the outputs)
 
 <pre class="language-text">http://www.yahboom.net/study/ROS-Driver-Board
 </pre>
-<h2 class="mume-header" id="98-useful-tutorial-links-how-to">98. Useful Tutorial Links (How To)</h2>
+<hr>
+<h2 class="mume-header" id="useful-tutorial-links">Useful Tutorial Links</h2>
 
+<hr>
 <h4 class="mume-header" id="ros2-humble-documentation">ROS2 Humble Documentation</h4>
 
 <p><a href="https://docs.ros.org/en/humble/">https://docs.ros.org/en/humble/</a></p>

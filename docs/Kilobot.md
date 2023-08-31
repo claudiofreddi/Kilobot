@@ -18,17 +18,23 @@ Questo documento ha lo scopo di sintetizzare:
 
 
 ### List of Contents
-##### [1. Ambiente Operativo](#1-Ambiente-Operativo)
-##### [2. Hardware necessario](#1-Hardware-Necessario)
-##### [3. Installazione Software Base](#3.-Installazione-Software-Base)
-##### [4. Setup Robot](#4-Setup-Robot)
+#### [1. Ambiente Operativo](#ambiente-operativo)
+#### [2. Hardware Necessario](#hardware-necessario)
+#### [3. Installazione Software Base](#installazione-software-base)
+#### [4. Setup Robot](#setup-robot)
+#### [5. Test Kilobot](#test-kilobot)
+#### [6. Run Kilobot](#run-kilobot)
 
-##### [99. Useful Commands](#99-Useful-Commands)
+##### [Code Links](#code-links)
+##### [Useful Tutorial Links (How To)](#useful-tutorial-links)
 
-
-## 1. Ambiente Operativo
+--- 
+## Ambiente Operativo
+--- 
 
 ### Mini PC 
+
+<span style="color:yellow;background-color:green">RobotDev</span>
 
 ##### Nome: RobotDev
 
@@ -36,14 +42,17 @@ Questo documento ha lo scopo di sintetizzare:
 
 ##### User: claudio
 
+
+
 Questo è il PC principale da cui si sviluppa e si controllano gli altri elementi dell'architettura.
 
 ![Alt text](41nLTxI0nPL._SS284_.jpg)
 
 ### Raspberry Pi 4 B+  (RobotRPi) 
 
-##### Nome: RobotRPI
+<span style="color:yellow;background-color:green">RobotRPI</span>
 
+##### Nome: RobotRPI
 
 ##### IP: 192.168.8.201
 
@@ -85,7 +94,9 @@ Questo Software permette di connettersi al Mini PC da remoto per una gestione da
 
 Servizio "__Unattened Remote Access__" (a pagamento, 120 Euro/anno fino a 25 unattended computers )
 
-## 2. Hardware Necessario 
+--- 
+## Hardware Necessario 
+--- 
 
 In aggiunta a Mini PC, Raspberry , Arduino si elencano gli altri componenti utilizzati nella costruzione del robot
 
@@ -166,10 +177,13 @@ AFTERTECH PACCO BATTERIA PILA 12V 10000mAh 10Ah RICARICABILE AL LITIO 120x65x31m
 
 ![Alt text](image-18.png)
 
-## 3. Installazione-Software-Base
-
+--- 
+## Installazione Software Base
+--- 
 
 ### OS Ubuntu su Mini PC !
+
+<span style="color:yellow;background-color:green">RobotDev</span>
 
 Installa __Ubuntu (22.04 LTS)__ con Dual Boot su PC Windows 11
 
@@ -186,6 +200,8 @@ Installa __ROS2 Humble__
 
 ### OS Ubuntu su Raspberry Pi 4 B+  (RobotRPi)
 
+<span style="color:yellow;background-color:green">RobotRPI</span>
+
 Installa __Ubuntu (22.04 LTS)__ on Raspberry Pi
 
  https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/
@@ -198,6 +214,7 @@ Installa __ROS2 Humble__ on Raspberry Pi
     source ~/robotws/src/install/setup.bash  ## need to know ws dir
 
 ### Software Generico (per Ubuntu di utilità)
+
 
 #### Installa IPScan
 
@@ -268,10 +285,14 @@ __Working Folder__
 
 __Min PC__
 
+<span style="color:yellow;background-color:green">RobotDev</span>
+
     ~/dev_ws/src/kilobot
     ~/robot_arduino/kilobot_arduino
 
 __Raspberry__
+
+<span style="color:yellow;background-color:green">RobotRPI</span>
 
     ~/robot_ws/src/kilobot
     ~/robot_arduino/kilobot_arduino
@@ -467,8 +488,9 @@ In ROS2 to check available controllers, run
     ros2 run joy joy_node # <-- Run in first terminal (running the node)
     ros2 topic echo /joy # <-- Run in second terminal (displaying the outputs)
 
-
-## 3. Setup Robot
+---
+## Setup Robot
+---
 
 #### Motor Connections Mode 
 
@@ -476,8 +498,27 @@ In ROS2 to check available controllers, run
 
 ![Alt text](schema_images/RaspBerryPinoutNew.png)
 
-## 97. Code Links
 
+---
+## Test Kilobot
+---
+
+#### Test Run motors (Mode A) 
+
+ 
+<span style="color:yellow;background-color:green">RobotRPI</span>
+
+    cd ~/robot_ws/src/kilobot/scripts/RobotRPI
+    
+    python3 motor_pwm_test.py
+
+
+
+## Run Kilobot
+
+---
+## Code Links
+---
 #### ROS Arduino Bridge  (Josh Newans)
 Questa implementazione abilita Arduino 
 
@@ -499,9 +540,9 @@ This module encapsulates the access for the serial port. It provides backends fo
 
 
 
-
-## 98. Useful Tutorial Links (How To)
-
+---
+## Useful Tutorial Links
+---
 #### ROS2 Humble Documentation
  https://docs.ros.org/en/humble/
 
@@ -609,6 +650,26 @@ Config file: _/home/claudio/dev_ws/src/kilobot/config/joystick.yaml_
     enable_turbo_button: 7      # Right shoulder button
     ...
 
+##### Python3 Serial
+
+<span style="color:red;background-color:yellow"> Da controllare </span>
+  
+  sudo apt install python3-serial
+
+##### pySerial miniterm application (Raspberry)
+
+<span style="color:red;background-color:yellow"> Da controllare </span>
+
+    mkdir robot_miniterm
+    cd robot_miniterm
+    git clone https://github.com/pyserial/pyserial.git
+    pip install pyserial
+    sudo python3 setup.py install
+    pyserial-miniterm -e /dev/ttyACM0 57600
+
+
+
+
 #SAMPLE
 
 **Nested HTML**
@@ -654,3 +715,12 @@ Col 1 | Col 2
  Val 1 | Val 2
 
 
+
+    🔴 red: +5V
+    🟠 orange: +3.3V
+    ⚫ black: ground
+    ⚪ white: ground (pull-down)
+    🟣 purple: I2C signal
+    🟢 green: clock signal
+    🟡 yellow: WS2812 signal
+    🔵 blue: resistor bridge (analogue) input
