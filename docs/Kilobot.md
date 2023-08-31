@@ -58,12 +58,15 @@ GL.iNET GL-MT300N-V2 (Mango) Mini portabile router da viaggio VPN, Mobile Hotspo
 Questo è l'attuatore principale dei motori perchè come microprocessore è in grado di conrtollare con più precisione alcuni aspetti.
 
 KEYESTUDIO MEGA R3 2560 Plus Controller Board per Arduino IDE cavo USB compatibile
+
 ![Alt text](51xIYDZFqZL._SY180_.jpg)
 
 KEYESTUDIO Mega 2560 R3 Sensor Shield Scheda di espansione per Arduino Mega R3 Kit
+
 ![Alt text](61s1NLCuHhL._SX180_.jpg)
 
 ### Zoho Assist 
+
 <img src="image.png" alt="description" style="border: 0px solid gray;" width="100  ">
 
 Questo Software permette di connettersi al Mini PC da remoto per una gestione da out of office.
