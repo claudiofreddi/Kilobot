@@ -1,7 +1,7 @@
 
-##**Kilobot**
+## **Kilobot**
 
-###**My First Robot in ROS2**
+### **My First Robot in ROS2**
 
 ![Alt text](image-11.png) ![Alt text](image-9.png)
 
@@ -30,11 +30,11 @@ Questo documento ha lo scopo di sintetizzare:
 
 ### Mini PC 
 
-#####Nome: RobotDev
+##### Nome: RobotDev
 
-#####IP: 192.168.8.200 
+##### IP: 192.168.8.200 
 
-#####User: claudio
+##### User: claudio
 
 Questo è il PC principale da cui si sviluppa e si controllano gli altri elementi dell'architettura.
 
@@ -42,12 +42,12 @@ Questo è il PC principale da cui si sviluppa e si controllano gli altri element
 
 ### Raspberry Pi 4 B+  (RobotRPi) 
 
-#####Nome: RobotRPI
+##### Nome: RobotRPI
 
 
-#####IP: 192.168.8.201
+##### IP: 192.168.8.201
 
-#####user: claudio
+##### user: claudio
 
 Questo è il cervello principale a bordo di __Kilobot__ che svolge le funzioni autonome.
 
@@ -55,7 +55,7 @@ Questo è il cervello principale a bordo di __Kilobot__ che svolge le funzioni a
 
 ### Wifi Router 
 
-#####Nome: RobotLAN
+##### Nome: RobotLAN
 
 Il router è utile per creare una rete separata con IP fissi così da conoscere perfettamente come raggiungere una risorsa.
 
