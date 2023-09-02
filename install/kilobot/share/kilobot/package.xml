@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>My Challenging Robot</description>
   <maintainer email="me@claudiofreddi.eu">Freddi Claudio</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
 
   <exec_depend>join_state_publisher</exec_depend> 
   <exec_depend>rvis2</exec_depend> 

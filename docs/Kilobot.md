@@ -561,6 +561,12 @@ Per verificare se il sistema funzione
 
     colcon build --symlink-install 
     
+
+##### Check interface type
+
+    ros2 interface show geometry_msgs/msg/Twist
+
+
 ##### Show ROS Nodes Graph
 
     ros2 run rqt_graph rqt_graph
