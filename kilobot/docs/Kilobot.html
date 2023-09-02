@@ -1,0 +1,799 @@
+<!DOCTYPE html><html><head>
+      <title>Kilobot</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/claudio/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.10/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="kilobot"><strong>Kilobot</strong></h2>
+
+<h3 class="mume-header" id="my-first-robot-in-ros2"><strong>My First Robot in ROS2</strong></h3>
+
+<p><img src="image-11.png" alt="Alt text"> <img src="image-9.png" alt="Alt text"></p>
+<h6 class="mume-header" id="autore-claudio-freddi">Autore: Claudio Freddi</h6>
+
+<h2 class="mume-header" id="introduzione">Introduzione</h2>
+
+<p>Questo documento ha lo scopo di sintetizzare:</p>
+<ul>
+<li>Le attivit&#xE0; svolte</li>
+<li>I riferimenti a link nel web che ho trovato molto utili</li>
+<li>I problemi che ho riscontrato e le soluzione</li>
+<li>Riferimenti a shortcut per svolgere attivit&#xE0; banali</li>
+</ul>
+<h3 class="mume-header" id="list-of-contents">List of Contents</h3>
+
+<h4 class="mume-header" id="1-ambiente-operativoambiente-operativo"><a href="#ambiente-operativo">1. Ambiente Operativo</a></h4>
+
+<h4 class="mume-header" id="2-hardware-necessariohardware-necessario"><a href="#hardware-necessario">2. Hardware Necessario</a></h4>
+
+<h4 class="mume-header" id="3-installazione-software-baseinstallazione-software-base"><a href="#installazione-software-base">3. Installazione Software Base</a></h4>
+
+<h4 class="mume-header" id="4-setup-robotsetup-robot"><a href="#setup-robot">4. Setup Robot</a></h4>
+
+<h4 class="mume-header" id="5-run-kilobotrun-kilobot"><a href="#run-kilobot">5. Run Kilobot</a></h4>
+
+<h5 class="mume-header" id="code-linkscode-links"><a href="#code-links">Code Links</a></h5>
+
+<h5 class="mume-header" id="useful-tutorial-links-how-touseful-tutorial-links"><a href="#useful-tutorial-links">Useful Tutorial Links (How To)</a></h5>
+
+<hr>
+<h2 class="mume-header" id="ambiente-operativo">Ambiente Operativo</h2>
+
+<hr>
+<h3 class="mume-header" id="mini-pc">Mini PC</h3>
+
+<h5 class="mume-header" id="nome-robotdev">Nome: RobotDev</h5>
+
+<h5 class="mume-header" id="ip-1921688200">IP: 192.168.8.200</h5>
+
+<h5 class="mume-header" id="user-claudio">User: claudio</h5>
+
+<p>Questo &#xE8; il PC principale da cui si sviluppa e si controllano gli altri elementi dell&apos;architettura.</p>
+<p><img src="41nLTxI0nPL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="raspberry-pi-4-b--robotrpi">Raspberry Pi 4 B+  (RobotRPi)</h3>
+
+<h5 class="mume-header" id="nome-robotrpi">Nome: RobotRPI</h5>
+
+<h5 class="mume-header" id="ip-1921688201">IP: 192.168.8.201</h5>
+
+<h5 class="mume-header" id="user-claudio-1">user: claudio</h5>
+
+<p>Questo &#xE8; il cervello principale a bordo di <strong>Kilobot</strong> che svolge le funzioni autonome.</p>
+<p><img src="51nTvEL3tKL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="wifi-router">Wifi Router</h3>
+
+<h5 class="mume-header" id="nome-robotlan">Nome: RobotLAN</h5>
+
+<p>Il router &#xE8; utile per creare una rete separata con IP fissi cos&#xEC; da conoscere perfettamente come raggiungere una risorsa.</p>
+<p><img src="41MXeeI78JL._AC_SY240_.jpg" alt="Alt text"></p>
+<p>GL.iNET GL-MT300N-V2 (Mango) Mini portabile router da viaggio VPN, Mobile Hotspot in tasca, ripetitore bridge, range extender, OpenVPN Client, 300Mbps Wireless ad alte prestazioni, 128MB RAM</p>
+<h3 class="mume-header" id="arduino">Arduino</h3>
+
+<p>Questo &#xE8; l&apos;attuatore principale dei motori perch&#xE8; come microprocessore &#xE8; in grado di conrtollare con pi&#xF9; precisione alcuni aspetti.</p>
+<p>KEYESTUDIO MEGA R3 2560 Plus Controller Board per Arduino IDE cavo USB compatibile</p>
+<p><img src="51xIYDZFqZL._SY180_.jpg" alt="Alt text"></p>
+<p>KEYESTUDIO Mega 2560 R3 Sensor Shield Scheda di espansione per Arduino Mega R3 Kit</p>
+<p><img src="61s1NLCuHhL._SX180_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="zoho-assist">Zoho Assist</h3>
+
+<img src="image.png" alt="description" style="border: 0px solid gray;" width="100  ">
+<p>Questo Software permette di connettersi al Mini PC da remoto per una gestione da out of office.</p>
+<p><a href="https://www.zoho.com/assist/">https://www.zoho.com/assist/</a></p>
+<p>Servizio &quot;<strong>Unattened Remote Access</strong>&quot; (a pagamento, 120 Euro/anno fino a 25 unattended computers )</p>
+<hr>
+<h2 class="mume-header" id="hardware-necessario">Hardware Necessario</h2>
+
+<hr>
+<p>In aggiunta a Mini PC, Raspberry , Arduino si elencano gli altri componenti utilizzati nella costruzione del robot</p>
+<h3 class="mume-header" id="yahboom-ros-expansion-board">Yahboom ROS Expansion Board</h3>
+
+<p>For Raspberry Pi Jetson Nano Robot Development Board UNO R3 Electronics Project DIY With ROS1&amp;ROS2 (ROS Expansion Board)</p>
+<p><img src="41kWFwbD2fL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="lidar">Lidar</h3>
+
+<p>Innomaker Lidar Radar incorporato DTOF 360 gradi di scansione omnidirezionale 25000 Lux Resistenza TOF Tempo di volo (LiDAR_LD19) Supporto ROS/ROS2</p>
+<p><img src="41qDKlysdFL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="braccio-meccanico">Braccio Meccanico</h3>
+
+<p>Taidda- Braccio Meccanico, 6DOF Robot Kit Braccio Meccanico Claw Kit Artiglio Manipolatore DOF Robot Industriale Parti per insegnamento Universitario</p>
+<p><img src="51P6nu68QzL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="powerbank">Powerbank</h3>
+
+<p>AXNEB Power Bank Wireless <strong>25W PD3.0+QC4.0, 26800mah</strong> Caricatore Portatile Wireless 15W Ricarica Rapida con 4 Uscite Caricabatterie per iPhone 13 12 11<br>
+<img src="31Q4w4mb30L._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="rpi-gpio-scheda-di-espansione">RPi GPIO Scheda di espansione</h3>
+
+<p>ARCELI RPi GPIO Scheda di espansione Breakout + Cavo a Nastro + Adattatore T Tipo GPIO assemblato 20 cm FC40 Cavo Piatto a Nastro 40pin per Raspberry</p>
+<p><img src="51dwcqsQRJL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="dc-dc-usb-buck-converter-step-down-module-6-32v-12v-24v-a-5v-qc-30">DC-DC USB Buck Converter Step-Down Module 6-32V 12V 24V a 5V QC 3.0</h3>
+
+<p>Youmile 5PCS DC-DC USB Buck Converter Step-Down Module 6-32V 12V 24V a 5V QC 3.0 Modulo di ricarica Regolatore di tensione Modulo di alimentazione con<br>
+<img src="51Ywb1O3tEL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="upc-batteria-step-up-charger-board-15w-9v">UPC Batteria Step Up Charger Board 15W (9V)</h3>
+
+<p>HEEPDD Batteria Step Up Charger Board, 15W 3A Batteria Al Litio Ricarica Modulo Boost Circuito UPS Ad Alta Efficienza per Dispositivo Elettrico (9v)</p>
+<p><img src="41zZLOe0EsL._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="pannello-solare-13-w-5-v">Pannello solare (13 W 5 V)</h3>
+
+<p>Andoer Caricatore solare 13 W 5 V pannello solare con doppia porta USB cella solare in silicio policristallino per attivit&#xEF;&#xBF;&#xBD; all&apos;aperto campeggio</p>
+<p><img src="41G2I89b0ML._SS284_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="scheda-driver-h-bridge">Scheda Driver H-bridge</h3>
+
+<p>Aatpuss 3 Pezzi Scheda Driver H-bridge, Modulo Driver Motore L298N, L298N Modulo H scheda Driver Bridge, per robot per Auto Intelligente Con Motore Passo-Passo</p>
+<p><img src="712jIrokXTL._AC_SY240_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="monitor-touchscreen-portatile-da-7-pollici-raspberry-pi">Monitor Touchscreen Portatile da 7 pollici Raspberry Pi</h3>
+
+<p>Beumons Monitor Touchscreen Portatile da 7 pollici Raspberry Pi,IPS da 1024X600 con monitor HDMI USB Capacitivo Pi,Compatibile con Raspberry Pi 3b+/Ra<br>
+<img src="41wVpLXgV5L._SY180_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="tastiera-bluetooth">Tastiera Bluetooth</h3>
+
+<p>Logitech K380 Tastiera Bluetooth Multidispositivo per Windows, Apple iOS, ?Bluetooth Wireless, Design Compatto, PC/Mac/Laptop/Smartphone/Tablet, Layou<br>
+<img src="41IuZk+N5XL._SY180_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="kit-ruote-25ga370">Kit Ruote 25GA370</h3>
+
+<p>Kit ruote da 65 mm Motore con albero da 4 mm, motore elettrico 25GA370, mini stampante per auto per robot per auto giocattolo intelligente</p>
+<p><img src="41-jPUAljJL._SY180_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="telecamera-modulo-telecamera-raspberry">Telecamera Modulo Telecamera (Raspberry)</h3>
+
+<p>KEYESTUDIO Raspberry Pi Telecamera Modulo Telecamera 5mp Sensore 1080p per Raspberry Pi 4 Modello A,B, B +, Modello 2, Zero<br>
+<img src="410tI5Kq7cL._SY180_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="modulo-relay-5v-a-2-canali">Modulo Relay 5V a 2 canali</h3>
+
+<p>AZDelivery 3 x Modulo Relay 5V a 2 canali con optoaccoppiatore Low-Level-Trigger compatibile con Arduino incluso un E-Book!<br>
+<img src="51MNXmsnZWL._SY180_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="batteria-12v-10000mah-10ah-ricaricabile">BATTERIA 12V 10000mAh 10Ah RICARICABILE</h3>
+
+<p>AFTERTECH PACCO BATTERIA PILA 12V 10000mAh 10Ah RICARICABILE AL LITIO 120x65x31mm F2D5<br>
+<img src="413PRZQJ1IL._SY180_.jpg" alt="Alt text"></p>
+<h3 class="mume-header" id="controller-xbox-one">Controller XBox One</h3>
+
+<p><img src="image-18.png" alt="Alt text"></p>
+<hr>
+<h2 class="mume-header" id="installazione-software-base">Installazione Software Base</h2>
+
+<hr>
+<h3 class="mume-header" id="os-ubuntu-su-mini-pc-">OS Ubuntu su Mini PC !</h3>
+
+<p>Installa <strong>Ubuntu (22.04 LTS)</strong> con Dual Boot su PC Windows 11</p>
+<p><a href="https://www.freecodecamp.org/news/how-to-dual-boot-windows-10-and-ubuntu-linux-dual-booting-tutorial/">https://www.freecodecamp.org/news/how-to-dual-boot-windows-10-and-ubuntu-linux-dual-booting-tutorial/</a></p>
+<p>Installa <strong>ROS2 Humble</strong></p>
+<p><a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html">https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html</a></p>
+<pre class="language-text">source /opt/ros/humble/setup.bash       ## need to know ROS dirs
+source ~/dev_ws/src/install/setup.bash  ## need to know ws dir
+</pre>
+<h3 class="mume-header" id="os-ubuntu-su-raspberry-pi-4-b--robotrpi">OS Ubuntu su Raspberry Pi 4 B+  (RobotRPi)</h3>
+
+<p>Installa <strong>Ubuntu (22.04 LTS)</strong> on Raspberry Pi</p>
+<p><a href="https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/">https://roboticsbackend.com/install-ubuntu-on-raspberry-pi-without-monitor/</a></p>
+<p>Installa <strong>ROS2 Humble</strong> on Raspberry Pi</p>
+<p><a href="https://roboticsbackend.com/install-ros2-on-raspberry-pi/">https://roboticsbackend.com/install-ros2-on-raspberry-pi/</a></p>
+<pre class="language-text">source /opt/ros/humble/setup.bash        ## need to know ROS dirs
+source ~/robotws/src/install/setup.bash  ## need to know ws dir
+</pre>
+<h3 class="mume-header" id="software-generico-per-ubuntu-di-utilit%C3%A0">Software Generico (per Ubuntu di utilit&#xE0;)</h3>
+
+<h4 class="mume-header" id="installa-ipscan">Installa IPScan</h4>
+
+<p>Download da sitoweb  IPScan</p>
+<p><a href="https://angryip.org/download/#linux">https://angryip.org/download/#linux</a></p>
+<p>poi installare dalla cartella Dowload</p>
+<pre class="language-text">sudo apt install /download/ipscan_2.9.1_amd64.deb
+</pre>
+<h4 class="mume-header" id="installa-tilix-multi-terminal-application">Installa Tilix (Multi Terminal Application)</h4>
+
+<pre class="language-text">sudo apt-get install -y tilix 
+</pre>
+<h4 class="mume-header" id="installa-zoho-remote-access">Installa Zoho (Remote access)</h4>
+
+<p>Da piattaforma zoho</p>
+<img src="image-2.png" alt="description" style="border: 1px solid gray;" width="600">
+<p><img src="image-7.png" alt="Alt text"></p>
+<h5 class="mume-header" id="per-abilitare-il-remote-access-in-linux-zoho-unattended">Per abilitare il Remote Access in Linux (Zoho Unattended)</h5>
+
+<p>Per abilitare l&apos;accesso remoto al software Linux:</p>
+<ol>
+<li>Open the file <strong>/etc/gdm/custom.conf</strong> in a text editor</li>
+<li><strong>Un-comment the line: &quot;#WaylandEnable=false&quot;</strong> (remove the # before the line)</li>
+<li>Save the file and reboot the machine</li>
+</ol>
+<p>Per abilitare l&apos;accesso remoto al software Linux:</p>
+<pre class="language-text">sudo apt install openssh-server # Install
+
+sudo systemctl status ssh       # Check Status
+
+sudo ufw allow ssh              #  Enable
+</pre>
+<p><img src="image-8.png" alt="Alt text"></p>
+<h4 class="mume-header" id="installa-github-alt-textimage-12png">Installa GitHub <img src="image-12.png" alt="Alt text"></h4>
+
+<p>E&apos; importante usare il repository di GitHub perch&#xE8; permette di gestire le versioni di codice e condividere lo stesso codice tra la macchina RobotDev e RobotRp</p>
+<p><strong>Installazione</strong></p>
+<pre class="language-text">sudo apt install git
+</pre>
+<p><strong>Configurazione</strong></p>
+<pre class="language-text">git config --global user.name claudiofreddi
+git config --global user.email git@claudiofreddi
+git config --global push.default simple
+</pre>
+<p><strong>Repositories</strong></p>
+<p><strong>Main Code (Min PC e Raspberry)</strong></p>
+<p><a href="https://github.com/claudiofreddi/kilobot">https://github.com/claudiofreddi/kilobot</a></p>
+<p><strong>Ardiuno Code</strong></p>
+<p><a href="https://github.com/claudiofreddi/kilobot_arduino">https://github.com/claudiofreddi/kilobot_arduino</a></p>
+<p><strong>Working Folder</strong></p>
+<p><strong>Min PC</strong></p>
+<pre class="language-text">~/dev_ws/src/kilobot
+~/robot_arduino/kilobot_arduino
+</pre>
+<p><strong>Raspberry</strong></p>
+<pre class="language-text">~/robot_ws/src/kilobot
+~/robot_arduino/kilobot_arduino
+</pre>
+<h6 class="mume-header" id="installa-github">Installa GitHub</h6>
+
+<p>Link di riepilogo dei comandi PULL e PUSH utile</p>
+<pre class="language-text">http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/
+</pre>
+<h3 class="mume-header" id="software-per-ros2-humble">Software per ROS2 (Humble)</h3>
+
+<h3 class="mume-header" id="install-xacro-e-joint-state-publisher-gui">Install Xacro e joint-state-publisher-gui</h3>
+
+<pre class="language-text">sudo apt install ros-humble-xacro ros-humble-joint-state-publisher-gui
+</pre>
+<h3 class="mume-header" id="install-tf2-tools-and-transformation">Install Tf2 tools and Transformation</h3>
+
+<p>Questi sono importanti per interfacciarsi con rViz2</p>
+<pre class="language-text">sudo apt-get install ros-humble-tf2-tools ros-humble-tf-transformations
+
+ros2 run tf2_tools view_frames  #Check it
+</pre>
+<p><img src="image-4.png" alt="Alt text"></p>
+<h3 class="mume-header" id="rviz2">RViz2</h3>
+
+<p>Questo tool permette di vedere la struttura del robot.<br>
+Il lancio di Rviz2 deve essere preceduto da</p>
+<pre class="language-text">robot_state_publisher           # aspetto statico del robot
+joint_state_publisher_gui       # aspetto dinamico del robot
+rviz2                           # rviz2
+</pre>
+<p>il lancio lo su pu&#xF2; fare con il comando</p>
+<pre class="language-text">ros2 launch kilobot rsp.launch.py  # lancia la sequenza
+</pre>
+<p>Utilizza i dati della cartella &quot;\Description\*.xacro&quot; dei file xacro.</p>
+<img src="image-5.png" alt="description" style="border: 1px solid gray;" width="1000">
+<h3 class="mume-header" id="turtlesim">Turtlesim</h3>
+
+<img src="image-19.png" alt="description" style="border: 1px solid gray;" width="200">
+<p>Per eseguire la Turtlesim lanciare</p>
+<pre class="language-text">ros2 run turtlesim turtlesim_node
+</pre>
+<h3 class="mume-header" id="joystick">Joystick</h3>
+
+<p><img src="image-18.png" alt="Alt text"></p>
+<p>Per attivare il Joystick lanciare</p>
+<pre class="language-text">ros2 run launch kilobot joystick.launch.py
+</pre>
+<p>che esegue</p>
+<pre class="language-text">ros2 joy joy_node # with params
+ros2 teleop_twist_joy teleop_node # with params and remap &apos;/cmd_vel&apos; =&gt; &apos;/turtle1/cmd_vel0
+</pre>
+<p>controllo con</p>
+<pre class="language-text">ros2  topic echo __/turtle1/cmd_vel__       # esito del topic
+
+ros2 run joy joy_enumarate_devices          # elenco device e ID controller (es. 0)
+</pre>
+<p><img src="image-13.png" alt="Alt text"></p>
+<p><em>Although splitting things up might seem more complex, it means that we don&#x2019;t need to rewrite the Twist calculations for every joystick out there, and we don&#x2019;t need to rewrite the joystick driver code for every possible application.</em></p>
+<p><em>(from <a href="https://articulatedrobotics.xyz/mobile-robot-14a-teleop/">https://articulatedrobotics.xyz/mobile-robot-14a-teleop/</a>)</em></p>
+<h3 class="mume-header" id="gazebo">GAZEBO</h3>
+
+<p>Per installazione</p>
+<pre class="language-text">sudo apt install ros-humble-gazebo-ros-pkgs
+</pre>
+<p>Esecuzione</p>
+<pre class="language-text">ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity some_name
+
+ros2 launch gazebo_ros gazebo.launch.py world:=src/robot_testing/worlds/world6.world
+</pre>
+<h3 class="mume-header" id="joystick-driver">Joystick Driver</h3>
+
+<p>Per l&apos;installazione del joystick ho trovato qualche difficolt&#xE0; con il joystick della <strong>XBOX One</strong> finch&#xE8; non ho trovato questo link utilissimo.</p>
+<p><a href="https://atar-axis.github.io/xpadneo/">https://atar-axis.github.io/xpadneo/</a></p>
+<p>Estratto solo per <strong>XBox One</strong></p>
+<h5 class="mume-header" id="prerequisites">Prerequisites</h5>
+
+<p>Make sure you have installed dkms, linux headers and a bluetooth implementation (e.g. bluez) and their dependencies.</p>
+<p>On <strong>Debian</strong> based systems (like Ubuntu) you can install those packages by running</p>
+<pre data-role="codeBlock" data-info="sh" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> dkms linux-headers-<span class="token variable"><span class="token variable">`</span><span class="token function">uname</span> -r<span class="token variable">`</span></span>
+</pre><h5 class="mume-header" id="installation">Installation</h5>
+
+<p>Download the Repository to your local machine</p>
+<pre class="language-text">git clone https://github.com/atar-axis/xpadneo.git
+cd xpadneo
+</pre>
+<p>run</p>
+<pre class="language-text">sudo ./install.sh
+</pre>
+<h5 class="mume-header" id="connection">Connection</h5>
+
+<pre class="language-text">sudo bluetoothctl
+[bluetooth]# scan on
+</pre>
+<p>wait until all available devices are listed (otherwise it may be hard to identify which one is the gamepad) push the connect button on upper side of the gamepad, and hold it down until the light starts flashing fast<br>
+wait for the gamepad to show up in bluetoothctl, remember the address (e.g. <code>C8:3F:26:XX:XX:XX</code>)</p>
+<pre class="language-text">[bluetooth]# scan off to stop scanning as it may interfere with properly pairing the controller
+[bluetooth]# pair &lt;MAC&gt;
+[bluetooth]# trust &lt;MAC&gt;
+[bluetooth]# connect &lt;MAC&gt; (should usually not be needed but there are open bugs)
+</pre>
+<p>The &lt; MAC &gt; parameter is optional if the command line already shows the controller name</p>
+<h5 class="mume-header" id="configuration">Configuration</h5>
+
+<p>Use</p>
+<pre class="language-text">sudo ./configure.sh 
+</pre>
+<p>to configure the driver as you wish. The script will guide you through the available options.</p>
+<h5 class="mume-header" id="update">Update</h5>
+
+<p>In order to update xpadneo, do the following</p>
+<p>Update your cloned repo:</p>
+<pre class="language-text">git pull
+</pre>
+<p>Run</p>
+<pre class="language-text">sudo ./update.sh
+</pre>
+<h5 class="mume-header" id="uninstallation">Uninstallation</h5>
+
+<p>Run</p>
+<pre class="language-text">sudo ./uninstall.sh 
+</pre>
+<p>to remove all installed versions of hid-xpadneo.</p>
+<h3 class="mume-header" id="joystick-configuration">Joystick Configuration</h3>
+
+<p>Per la configurazione ed utilizzo del Joystick ho trovato molto utile questo link</p>
+<p><a href="https://articulatedrobotics.xyz/mobile-robot-14a-teleop/">https://articulatedrobotics.xyz/mobile-robot-14a-teleop/</a></p>
+<p>To check our gamepad works in Linux, we want to install some useful tools:</p>
+<pre class="language-text">sudo apt install joystick jstest-gtk evtest
+</pre>
+<p>With the controller connected (e.g. via USB or Bluetooth), we can open a terminal and run evtest.</p>
+<p>In ROS2 to check available controllers, run</p>
+<pre class="language-text">ros2 run joy joy_enumerate_devices
+</pre>
+<p><img src="enumerate_devices.png" alt="Alt text"></p>
+<pre class="language-text">ros2 run joy joy_node # &lt;-- Run in first terminal (running the node)
+ros2 topic echo /joy # &lt;-- Run in second terminal (displaying the outputs)
+</pre>
+<hr>
+<h2 class="mume-header" id="setup-robot">Setup Robot</h2>
+
+<hr>
+<h4 class="mume-header" id="motor-connections-mode">Motor Connections Mode</h4>
+
+<p><img src="schema_images/Motor_Modes.png" alt="Alt text"></p>
+<p><img src="schema_images/RaspBerryPinoutNew.png" alt="Alt text"></p>
+<hr>
+<h2 class="mume-header" id="run-kilobot">Run Kilobot</h2>
+
+<hr>
+<hr>
+<h2 class="mume-header" id="code-links">Code Links</h2>
+
+<hr>
+<h4 class="mume-header" id="ros-arduino-bridge--josh-newans">ROS Arduino Bridge  (Josh Newans)</h4>
+
+<p>Questa implementazione abilita Arduino</p>
+<p><a href="https://github.com/joshnewans/ros_arduino_bridge/tree/main/ROSArduinoBridge">https://github.com/joshnewans/ros_arduino_bridge/tree/main/ROSArduinoBridge</a></p>
+<h4 class="mume-header" id="ros-arduino-bridge--original---homebrew-robotics-club">ROS Arduino Bridge  (Original - HomeBrew Robotics Club)</h4>
+
+<p><a href="https://github.com/hbrobotics/ros_arduino_bridge">https://github.com/hbrobotics/ros_arduino_bridge</a></p>
+<h4 class="mume-header" id="pyserial-serial-comunicartion-python">PySerial (Serial comunicartion Python)</h4>
+
+<p>This module encapsulates the access for the serial port. It provides backends for Python running on Windows, OSX, Linux, BSD (possibly any POSIX compliant system) and IronPython. The module named &quot;serial&quot; automatically selects the appropriate backend.</p>
+<p><a href="https://github.com/pyserial/pyserial/tree/master">https://github.com/pyserial/pyserial/tree/master</a></p>
+<h4 class="mume-header" id="yahboom-robot-shield">YAHBOOM Robot Shield</h4>
+
+<pre class="language-text">http://www.yahboom.net/study/ROS-Driver-Board
+</pre>
+<hr>
+<h2 class="mume-header" id="useful-tutorial-links">Useful Tutorial Links</h2>
+
+<hr>
+<h4 class="mume-header" id="ros2-humble-documentation">ROS2 Humble Documentation</h4>
+
+<p><a href="https://docs.ros.org/en/humble/">https://docs.ros.org/en/humble/</a></p>
+<h4 class="mume-header" id="ros2-tutorial-josh-newans">ROS2 Tutorial (Josh Newans)</h4>
+
+<p>Utilissimo sia per la costruzione del robot che per la parte teorica</p>
+<p><a href="https://articulatedrobotics.xyz">https://articulatedrobotics.xyz</a></p>
+<h4 class="mume-header" id="github-basics">GitHub Basics</h4>
+
+<p><a href="http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/">http://www.allafinedelpalo.it/git-1-introduzione-add-commit-push-pull/</a></p>
+<h4 class="mume-header" id="flash-arduino-da-raspberry-da-remoto-josh-newans">Flash Arduino da Raspberry da remoto (Josh Newans)</h4>
+
+<p>Spiega come caricare del software su Arduino da remoto, ovvero connettendosi con Visual Studio dalla macchina RobotDev a RobotRPI a cui &#xE8; connesso Arduino con USB seriale</p>
+<p><a href="https://www.youtube.com/watch?v=2BJ-iJF04VA&amp;list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&amp;index=21">https://www.youtube.com/watch?v=2BJ-iJF04VA&amp;list=RDCMUCx9vSJTSZGFrErfPtut5GNQ&amp;index=21</a></p>
+<h4 class="mume-header" id="connessione-raspberry-e-arduino-modalit%C3%A0-possibili">Connessione Raspberry e Arduino (modalit&#xE0; possibili)</h4>
+
+<p>How to Connect and Interface a Raspberry Pi With an Arduino ?</p>
+<p><a href="https://rishabhdevyadav.medium.com/how-to-connect-and-interface-a-raspberry-pi-with-an-arduino-4153e3c09e7c">https://rishabhdevyadav.medium.com/how-to-connect-and-interface-a-raspberry-pi-with-an-arduino-4153e3c09e7c</a></p>
+<h4 class="mume-header" id="the-ultimate-guide-to-using-motors-in-robotics-including-ros-raspberry-pi---connect-motor-shield">The Ultimate Guide to using Motors in Robotics (including ROS, Raspberry Pi) - Connect Motor Shield</h4>
+
+<p><a href="https://www.youtube.com/watch?v=-PCuDnpgiew">https://www.youtube.com/watch?v=-PCuDnpgiew</a></p>
+<p><img src="image-1.png" alt="Alt text"></p>
+<h2 class="mume-header" id="99-useful-commands">99. Useful Commands</h2>
+
+<h5 class="mume-header" id="connessione-a-roborrpi">Connessione a RoborRPI</h5>
+
+<pre class="language-text">ssh claudio@192.168.8.201 
+</pre>
+<h5 class="mume-header" id="test-listener-and-talker">TEST LISTENER and TALKER</h5>
+
+<p>Per verificare se il sistema funzione</p>
+<pre class="language-text">ros2 run demo_nodes_py listener
+
+ros2 run demo_nodes_py talker
+</pre>
+<p><img src="image-15.png" alt="Alt text"></p>
+<h5 class="mume-header" id="sourcing-folder-homebashrc">Sourcing Folder (/home/.bashrc)</h5>
+
+<pre class="language-text">source /opt/ros/humble/setup.bash       ## need to know ROS dirs
+
+# MiniPC
+source ~/dev_ws/src/install/setup.bash  ## need to know ws dir
+
+# Raspberry
+source ~/robotws/src/install/setup.bash  ## need to know ws dir
+</pre>
+<h5 class="mume-header" id="compiling-code">Compiling Code</h5>
+
+<pre class="language-text">colcon build --symlink-install 
+</pre>
+<h5 class="mume-header" id="show-ros-nodes-graph">Show ROS Nodes Graph</h5>
+
+<pre class="language-text">ros2 run rqt_graph rqt_graph
+</pre>
+<h5 class="mume-header" id="run-rviz2">Run RViz2</h5>
+
+<pre class="language-text">ros2 launch kilobot rsp.launch.py
+</pre>
+<p><img src="image-16.png" alt="Alt text"></p>
+<p><img src="image-17.png" alt="Alt text"></p>
+<p><strong>JOYSTICK</strong> check available controllers</p>
+<pre class="language-text">ros2 run joy joy_enumerate_devices
+</pre>
+<h5 class="mume-header" id="run-joystick">Run Joystick</h5>
+
+<p>Connect Joystick</p>
+<pre class="language-text">ros2 launch kilobot joystick.launch.py
+
+ros2 run turtlesim turtlesim_node
+</pre>
+<p>verfica</p>
+<pre class="language-text">ros2 topic list
+
+/joy
+/joy/set_feedback
+/parameter_events
+/rosout
+/turtle1/cmd_vel
+/turtle1/color_sensor
+/turtle1/pose
+</pre>
+<p><img src="image-14.png" alt="Alt text"></p>
+<p>Config file: <em>/home/claudio/dev_ws/src/kilobot/config/joystick.yaml</em></p>
+<pre class="language-text">...
+require_enable_button: true # press key to use
+enable_button: 6            # Left shoulder button
+enable_turbo_button: 7      # Right shoulder button
+...
+</pre>
+<h1 class="mume-header" id="sample">SAMPLE</h1>
+
+<p><strong>Nested HTML</strong></p>
+<iframe src="./html/res_Codifica_Nuovi_Clienti.html" <p>height=&quot;500px&quot; width=&quot;1000px&quot;&gt;</iframe><br>
+<a href="./file.html">Simple Link to HTML</a><p></p>
+<p><strong>Image sized</strong></p>
+<img src="./images/Logo.png" alt="description" style="border: 0px solid gray;" width="200">
+<p><strong>Nested SQL with height</strong></p>
+<div style="height: 200px; overflow: auto">
+<pre data-role="codeBlock" data-info="sql" class="language-sql"></pre></div>
+<p><strong>SQL</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"></pre><p><span style="color:gray"><b>JSON Risorsa</b></span><br></p>
+<p><a target="_blank" href="../jsonfilename.json" download="filename.json">Download</a><br>
+<br></p>
+<p><span style="color:gray"><b>Gray Title</b></span><br></p>
+<p><em><strong>Bold And Underlined</strong></em></p>
+<p><strong>Table</strong></p>
+<table>
+<thead>
+<tr>
+<th>Col 1</th>
+<th>Col 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Val 1</td>
+<td>Val 2</td>
+</tr>
+<tr>
+<td>Val 1</td>
+<td>Val 2</td>
+</tr>
+<tr>
+<td>Val 1</td>
+<td>Val 2</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
