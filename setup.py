@@ -1,41 +1,29 @@
-from setuptools import setup
-import os
-from glob import glob
+from setuptools import find_packages, setup
+
 package_name = 'kilobot'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],
-    py_modules=[
-        'scripts.publisher', 'scripts.subscriber'
-        ],
+    packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
-        (os.path.join('share',package_name,'meshes'),glob('meshes/*')),
-        (os.path.join('share',package_name,'launch'),glob('launch/*')),
-        (os.path.join('share',package_name,'urdf'),glob('urdf/*')),
-        (os.path.join('share',package_name,'worlds'),glob('worlds/*')),
-        (os.path.join('share',package_name,'data'),glob('data/*'))
+        ('share/' + package_name, ['package.xml'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='claudiofreddi',
-    maintainer_email='me@claudiofreddi.eu',
-    description='kilobot',
-    license='MIT',
+    maintainer='claudio',
+    maintainer_email='git@claudiofreddi.eu',
+    description='TODO: Package description',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-                'cmdVel_to_pwm_node = scripts.cmd_to_pwm_driver:main',
-                'publisher_node = scripts.publisher:main'
-                #'subscriber_node = vision_rpi_bot.subscriber:main',
-                #'qr_maze_solve_node = vision_rpi_bot.qr_maze_drive:main',
-                #'line_following_sim_node = vision_rpi_bot.line_following_sim:main',
-                #'line_following_real_node = vision_rpi_bot.line_following_real:main',
-                #'surveillance_node = vision_rpi_bot.surveillance_bot:main',
-                           ],
-                }
+            'my_node = kilobot.my_node:main',
+            'publisher_node = kilobot.publisher:main',
+            'subscriber_node = kilobot.subscriber:main'
+
+        ],
+    },
 )
