@@ -215,6 +215,11 @@ Installa __ROS2 Humble__ on Raspberry Pi
 
 ### Software Generico (per Ubuntu di utilità)
 
+#### Python3
+
+Attenzione a tenere la versione dei tools a 58.2.0
+
+    pip install setuptools==58.2.0
 
 #### Installa IPScan
 
@@ -624,6 +629,12 @@ Per verificare se il sistema funzione
 
     ros2 run joy joy_enumerate_devices
 
+
+##### Run Keyboard
+
+    ros2 run turtlesim turtle_teleop_key
+
+    ros2 run turtlesim turtlesim_node
     
 ##### Run Joystick
 
