@@ -7,7 +7,7 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
 
     joy_params = os.path.join(get_package_share_directory('kilobot'),'config','joystick.yaml')
-
+    joy_params = '/home/claudio/dev_ws/src/kilobot/kilobot/config/joystick.yaml'
     joy_node = Node(
             package='joy',
             executable='joy_node',

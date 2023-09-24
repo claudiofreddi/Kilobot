@@ -221,6 +221,39 @@ Attenzione a tenere la versione dei tools a 58.2.0
 
     pip install setuptools==58.2.0
 
+#### Install __PYTTSX3__ Text To Speeh (Raspberry)
+
+    sudo apt-get install alsa-utils
+
+    sudo apt-get install mplayer
+
+    sudo apt install ffmpeg
+    
+    sudo apt-get install portaudio19-dev
+
+    sudo pip install pyaudio
+
+    sudo pip install speechrecognition
+
+    sudo pip install pyttsx3
+
+    sudo apt install python3-espeak
+
+see links
+
+https://circuitdigest.com/microcontroller-projects/best-text-to-speech-tts-converter-for-raspberry-pi-espeak-festival-google-tts-pico-and-pyttsx3
+
+https://www.geeksforgeeks.org/python-text-to-speech-pyttsx-module/
+
+    
+#### Install __PYTTSX3__ Text To Speeh (Raspberry)
+
+    sudo apt-get install espeak
+    
+    espeak “Hello Everyone”
+
+    espeak -ven+f2 -k5 -s150 -a 100 -g10 "Hi, Welcome to this robot"
+
 #### Installa IPScan
 
 Download da sitoweb  IPScan 
@@ -368,7 +401,7 @@ che esegue
 
 controllo con
 
-    ros2  topic echo __/turtle1/cmd_vel__       # esito del topic
+    ros2  topic echo /turtle1/cmd_vel       # esito del topic
 
     ros2 run joy joy_enumarate_devices          # elenco device e ID controller (es. 0)
 
